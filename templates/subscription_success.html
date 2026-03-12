@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}Subscribed Successfully – Pickles & Snacks{% endblock %}
+
+{% block content %}
+<div class="success-wrap">
+  <div class="success-card">
+    <div class="success-icon">🥒</div>
+    <h1>{{ subscription.user.name.split()[0] }}, you're subscribed!</h1>
+    <p class="success-sub">Welcome to the <strong>{{ subscription.plan }}</strong> — your delicious boxes are on their way!</p>
+
+    <div class="order-id-box">
+      Subscription ID: <strong>{{ subscription.id }}</strong>
+    </div>
+
+    <div class="success-details">
+      <div class="success-detail-row">
+        <span>Plan</span><span><strong>{{ subscription.plan }}</strong></span>
+      </div>
+      <div class="success-detail-row">
+        <span>Status</span><span class="status-badge">{{ subscription.status }}</span>
+      </div>
+      <div class="success-detail-row">
+        <span>Subscribed At</span><span>{{ subscription.created_at }}</span>
+      </div>
+      <div class="success-detail-row">
+        <span>Account</span><span>{{ subscription.user.email }}</span>
+      </div>
+    </div>
+
+    <div class="success-items">
+      <h3>What's Included</h3>
+      {% if "Pickle" in subscription.plan %}
+      <div class="success-item"><span>🥒 4 jars of seasonal pickles</span><span>Monthly</span></div>
+      <div class="success-item"><span>🚚 Free delivery</span><span>Every box</span></div>
+      <div class="success-item"><span>✨ New flavour every month</span><span>Surprise!</span></div>
+      <div class="success-item"><span>❌ Cancel anytime</span><span>No lock-in</span></div>
+      {% else %}
+      <div class="success-item"><span>🍿 3 packs of fresh snacks</span><span>Weekly</span></div>
+      <div class="success-item"><span>🚚 Free delivery</span><span>Every box</span></div>
+      <div class="success-item"><span>✨ Curated weekly selection</span><span>Handpicked</span></div>
+      <div class="success-item"><span>❌ Cancel anytime</span><span>No lock-in</span></div>
+      {% endif %}
+    </div>
+
+    <p class="success-note">
+      📦 Your first box will be dispatched within 2–3 business days.<br/>
+      We'll send all updates to <strong>{{ subscription.user.email }}</strong>.
+    </p>
+
+    <div class="success-actions">
+      <a href="{{ url_for('products') }}" class="btn btn-primary">Browse More Products</a>
+      <a href="{{ url_for('index') }}" class="btn btn-outline">Back to Home</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
