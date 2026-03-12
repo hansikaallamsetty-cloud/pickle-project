@@ -87,3 +87,7 @@ http://localhost:5000
 - **Font:** Poppins + Playfair Display (Google Fonts)
 - **Colors:** Black `#000000` · Yankees Blue `#14213D` · Dark Orange `#FCA311` · Platinum `#E5E5E5`
 - **Theme:** Dark, modern e-commerce with animated hero and floating jar visuals
+<<<<<<< HEAD
+=======
+# pickle-project
+>>>>>>> 99f5c9e759de077603f5e308578d7c036ea61c13

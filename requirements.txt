@@ -1,5 +1,8 @@
 Flask>=2.3.0
 Pillow>=10.0.0
+<<<<<<< HEAD
 Flask
 gunicorn
 Pillow
+=======
+>>>>>>> 99f5c9e759de077603f5e308578d7c036ea61c13
